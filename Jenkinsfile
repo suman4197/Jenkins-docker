@@ -3,7 +3,7 @@ pipeline {
         stages { 
             stage ('cloning a repository') { 
                 steps { 
-                    echo "cloning a repository is succesful"
+                    echo "cloning and building war in a repository is succesful"
                     sleep 5
                     }
                 }
