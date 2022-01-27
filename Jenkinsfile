@@ -9,5 +9,12 @@ pipeline {
                     sleep 5
                     }
                 }
+            stage ('biulind a docker image') {
+                steps {
+                    sh 'docker build -t suman4197/myapp1'
+                    sleep 5
+                    }
+                }
+                
           }
    }
