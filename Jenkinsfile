@@ -7,15 +7,10 @@ pipeline {
                 echo "succesfully cloned a repository"
                 }
             }
-        stage ('building a docker file') {
+        stage ('Building a docker file') {
             steps {
                 script {
-                FROM alpine
-                MAINTAINER "sam"
-                ARG input
-                RUN echo $input
-                CMD ["echo","$input"]
-                sh 'docker build -t my_alpine:2.0' . 
+                sh 'docker build -t suman4197/my_alpine:2.0' . 
                 echo "image is succesfully build"
                 }
             }
