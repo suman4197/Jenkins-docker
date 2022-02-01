@@ -14,6 +14,6 @@ pipeline {
                 echo "image is succesfully build"
                 }
             }
-        }
+       }
      }
  }
