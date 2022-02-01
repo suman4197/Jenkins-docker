@@ -1,4 +1,7 @@
 pipeline { 
+    environment {
+        DOCKERHUB_CREDENTIALS=credentials('suman4197')
+    }
     agent any 
     stages {
         stage ('Cloning a repository') {
@@ -10,7 +13,7 @@ pipeline {
         stage ('Building a docker file') {
             steps {
                 script {
-                sh 'docker build -t suman4197/my_alpine:2.0' . 
+                sh 'docker build -t suman4197/my_alpine:latest' . 
                 echo "image is succesfully build"
                 }
             }
