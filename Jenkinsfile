@@ -1,21 +1,17 @@
 pipeline { 
     agent any 
-        stages { 
-            stage ('cloning and building') { 
-                steps { 
-                    git branch: 'main', url: 'https://github.com/suman4197/Jenkins-docker.git'
-                    sh 'mvn clean install'
-                    echo "cloning a repository and building war file is succesful"
-                    sleep 5
-                    }
-                }
-            stage ('biulind a docker image') {
-                steps {
-                    script {
-                    sh 'docker build -t suman4197/myapp1'
-                    sleep 5
-                    }
+    stages {
+        stage ('Cloning a repository') {
+            steps { 
+                git branch: 'main', url: 'https://github.com/suman4197/Jenkins-docker.git'
+                echo "succesfully cloned a repository"
                 }
             }
-          }
-   }
+        stage ('building a docker file') {
+            steps {
+                sh 'docker build -t my_alpine:2.0 . 
+                echo "image is succesfully build"
+                }
+            }
+        }
+    }
