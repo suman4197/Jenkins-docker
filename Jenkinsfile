@@ -1,7 +1,4 @@
 pipeline { 
-    environment {
-        DOCKERHUB_CREDENTIALS=credentials('suman4197')
-    }
     agent any 
     stages {
         stage ('Cloning a repository') {
