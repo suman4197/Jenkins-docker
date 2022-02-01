@@ -9,9 +9,11 @@ pipeline {
             }
         stage ('building a docker file') {
             steps {
+                script {
                 sh 'docker build -t my_alpine:2.0' . 
                 echo "image is succesfully build"
                 }
             }
+        }
         }
     }
